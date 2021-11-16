@@ -22,7 +22,7 @@ def process_export(fname):
     messages = messages.replace("\n", " ")
     words = messages.lower().split(" ")
     words = [re.sub("[\\W_]", "", w) for w in words]
-    #words = [morph.parse(w)[0].normal_form for w in words]
+    words = [morph.parse(w)[0].normal_form for w in words]
     words = [w for w in words if len(w) > 2]
     words = [w for w in words if not w in STOP_WORDS]
     return words
